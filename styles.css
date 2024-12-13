@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, sans-serif;
+    /* Все элементы включают padding и border в расчет */
+}
+
+/* Общие стили */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    /* Плавная прокрутка */
+}
+
+.header {
+    position: fixed; /* Фиксированное положение */
+    top: 0; /* Привязка к верхней части страницы */
+    width: 100%; /* Ширина на всю ширину экрана */
+    background-color: #333; /* Цвет фона заголовка */
+    color: white; /* Цвет текста */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    z-index: 1000; /* Уровень наложения */
+    text-align: center; /* Центрирование текста */
+}
+
+.header h1 {
+    margin: 0; /* Убираем отступы у заголовка */
+    font-size: 24px; /* Размер шрифта заголовка */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Стили для секций */
+.section {
+    height: 100vh;
+    /* Каждая секция занимает 100% высоты экрана */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    word-wrap: break-word;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /* Секцию и её элементы расположить вертикально */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 350px;
+    background-color: #264653;
+    box-sizing: border-box; 
+}
+
+#section1 {
+    background-color: #ed9682;
+    padding: 150px;
+    color: white;
+}
+
+#section2 {
+    background-color: #ee7854;
+    color: white;
+}
+
+#section3 {
+    background-color: #ba3f54;
+    color: white;
+}
+
+#section4 {
+    background-color: #fdd6ad;
+    padding: 20px;
+    color: white;
+}
+
+#section5 {
+    background-color: #ffb192;
+    padding: 20px;
+    color: white;
+}
+
+
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    /* Контейнер с изображением */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Секцию и её элементы расположить вертикально */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 240px;
+    /* Ограничивает максимальный размер изображения */
+}
+
+.text-overlay {
+    position: absolute;
+    /* Позиционирование текста поверх изображения */
+    top: 50%;
+    /* Центрируем текст по вертикали */
+    left: 50%;
+    /* Центрируем текст по горизонтали */
+    transform: translate(-50%, -50%);
+    /* Корректируем центрирование текста */
+    color: white;
+    /* Цвет текста */
+    font-size: 20px;
+    /* Размер текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Тень для улучшения читаемости */
+}
+
+
+
+.image-container {
+    position: relative;
+    /* Контейнер с изображением */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Секцию и её элементы расположить вертикально */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.image-container img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 340px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    /* Плавное увеличение изображения */
+}
+
+.image-container:hover img {
+    transform: scale(1.5);
+    /* Увеличиваем изображение при наведении */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    /* Центрируем текст по вертикали */
+    left: 50%;
+    /* Центрируем текст по горизонтали */
+    transform: translate(-50%, -50%);
+    /* Центрируем текст */
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Текст скрыт по умолчанию */
+    transition: opacity 0.5s ease;
+    /* Плавное появление текста */
+}
+
+.image-container:hover .text-overlay {
+    opacity: 1;
+    /* Текст становится видимым при наведении */
+}
+
+/* Стиль для полноэкранного режима */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen img {
+    width: auto;
+    height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-gallery {
+    display: flex;
+    /* Для размещения элементов в одну строку */
+    gap: 1px;
+    /* Отступы между изображениями */
+    justify-content: center;
+    /* Центрируем изображения по горизонтали */
+    padding: 0px;
+    background-color: #ba3f54;
+}
+
+
+h2 {
+    padding-top: 30px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 100%;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.stat {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 180px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.stat:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    background-color: #e0f7fa; /* Изменение цвета фона при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+}
+
+.stat h3 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.stat p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+.image-container1 {
+    position: relative;
+    /* Контейнер с изображением */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Секцию и её элементы расположить вертикально */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+
+.image-container1 img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1040px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    /* Плавное увеличение изображения */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card {
+    background-color: #eda482; /* Цвет фона карточки */
+    padding: 20px; /* Отступы внутри карточки */
+    margin: 20px; /* Отступы между карточками */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для карточки */
+    color: white; /* Цвет текста */
+    max-width: 800px; /* Максимальная ширина карточки */
+    width: 100%; /* Ширина карточки */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для трансформации и тени */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Увеличение тени при наведении */
+}
+
+.card h1 {
+    margin: 10px 0; /* Отступы для заголовков */
+    font-size: 30px;
+}
+
+.card p {
+    margin: 10px 0; /* Отступы для параграфов */
+    font-size: 24px;
+}
+
+footer{
+    background-color: black;
+    color:  black;
+}
+
+.footer {
+    background-color: #333; /* Цвет фона футера */
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрирование текста */
+    padding: 10px; /* Отступы внутри футера */
+    position: relative; /* Позволяет футеру оставаться внизу страницы */
+    bottom: 0; /* Привязывает футер к нижней части страницы */
+    width: 100%; /* Ширина футера на всю ширину экрана */   
+}
